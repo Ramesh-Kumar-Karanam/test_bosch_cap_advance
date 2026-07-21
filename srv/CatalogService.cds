@@ -50,5 +50,4 @@ service CatalogService @(path:'/CatalogService') {
     //function
     function getLargestOrder() returns PurchaseOrderSet;
 
-
 }

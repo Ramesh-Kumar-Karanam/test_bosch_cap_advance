@@ -106,3 +106,40 @@ http://localhost:4004/odata/v2/CatalogService/EmployeeSet
 
 ###V4 Response
 http://localhost:4004/CatalogService/EmployeeSet
+
+
+### GET All employees
+http://localhost:4004/CatalogService/EmployeeSet
+Authorization: Basic saranya:1234
+
+
+### GET All employees
+http://localhost:4004/CatalogService/EmployeeSet
+Authorization: Basic anubhav: 1234
+
+
+### GET All employees
+http://localhost:4004/CatalogService/EmployeeSet
+Authorization: Basic saranya:1234
+
+
+
+### GET All employees
+http://localhost:4004/CatalogService/EmployeeSet
+Authorization: Basic saranya:1234
+
+
+
+### Create a new Employee
+POST http://localhost:4004/CatalogService/EmployeeSet
+Authorization: Basic pallavi:1234
+Content-Type: application/json
+
+
+{
+  "nameFirst": "Cristiano",
+  "nameLast": "Ronaldo",
+  "bankName": "My Bank of San Francisco",
+  "salaryAmount":100000,
+  "Currency_code":"USD"
+}

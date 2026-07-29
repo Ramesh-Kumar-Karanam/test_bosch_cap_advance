@@ -54,8 +54,8 @@ context CDSView {
    
     define view![ItemView] as
         select from transaction.poitems{
-            PARENT_KEY.PARTNER_GUID.NODE_KEY as![BusinessPartnerNodeKey],
-            PRODUCT_GUID.NODE_KEY as![ProductNodeKey],
+            key PARENT_KEY.PARTNER_GUID.NODE_KEY as![BusinessPartnerNodeKey],
+            key PRODUCT_GUID.NODE_KEY as![ProductNodeKey],
             CURRENCY as![CurrencyCode],
             GROSS_AMOUNT as![GrossAmount],
             NET_AMOUNT as![NetAmount],
@@ -89,7 +89,7 @@ context CDSView {
 
     define view CProductValuesView as
         select from ProductView{
-            ProductId,
+            key ProductId,
             Country,
             round(sum(PurchaseOrders.GrossAmount),2) as![TotalGrossAmount],
             PurchaseOrders.CurrencyCode as![CurrencyCode]

@@ -2,10 +2,26 @@
 using { anubhav.db.master, anubhav.db.transaction } from '../db/datamodel';
 
 
-service CatalogService @(path:'/CatalogService') {
+service CatalogService @(path:'/CatalogService', requires: 'authenticated-user') {
    
     @readonly
-    entity EmployeeSet as projection on master.employees;
+    entity EmployeeSet 
+                         @(
+                            restrict: [
+                                {
+                                    grant: ['READ'], to: 'Display',
+                                    where: 'bankName = $user.spiderman'
+                                },
+                                {
+                                    grant: ['WRITE'], to: 'Edit'
+                                },
+                                {
+                                    grant: ['DELETE'], to: 'Delete'
+                                }
+                            ]
+                        )  
+
+    as projection on master.employees;
     @Capabilities.InsertRestrictions : {
         $Type : 'Capabilities.InsertRestrictionsType',
         Insertable : false

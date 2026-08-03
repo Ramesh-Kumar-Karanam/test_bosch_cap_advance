@@ -9,6 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node node_modules/@sap/approuter/approuter.js"
+    
   },
   "dependencies": {
     "@sap/approuter": "^22.0.3"
